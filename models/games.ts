@@ -6,3 +6,10 @@ export interface game {
   genre: string
   score: number
 }
+
+export interface newGame {
+  id?: number
+  title: string
+  genre: string
+  score: number
+}

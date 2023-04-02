@@ -9,5 +9,4 @@ return request.get(url).then((response)=>{
   console.log(response.body)
  return response.body
 })
-
 }

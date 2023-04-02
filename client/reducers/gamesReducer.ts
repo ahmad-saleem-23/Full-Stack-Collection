@@ -3,7 +3,7 @@ import type { Games,game } from "../../models/games"
 
 
 const initialState:GameState={
-  data: [{id: 1, title: 'Grand Theft Auto V', genre:'open-world action game', score:10}],
+  data: [],
   isLoading: false,
   error: null,
 }

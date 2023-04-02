@@ -1,16 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import {useAppSelector } from '../hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
+import { fetchGames } from '../actions/games'
 
 export default function GamesList() {
   const games = useAppSelector((state) => state.gamesReducer)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchGames())
+      
+  }, [])
 
   return (
     <>
       <div>
         <h1>My Game Library</h1>
         <ul>
-          {games.data.map(game => (
+          {games.data.map((game) => (
             <li key={game.id}>
               <h2>{game.title}</h2>
               <p>Genre: {game.genre}</p>

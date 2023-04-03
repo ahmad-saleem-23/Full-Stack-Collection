@@ -32,25 +32,28 @@ export default function UpdateGame({ id,name,cata,rating, onSubmit }: Props) {
   return (
     <div>
       <form onSubmit={handelSubmit}>
-        <label htmlFor="text">title </label>
+        <label htmlFor="Update-title">title </label>
         <input
           type="text"
+          id='Update-title'
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <br />
-        <label htmlFor="text">genre </label>
+        <label htmlFor="Update-genre">genre </label>
         <input
           type="text"
+          id='Update-genre'
           name="genre"
           value={genre}
           onChange={(e) => setGenre(e.target.value)}
         />
         <br />
-        <label htmlFor="text">score </label>
+        <label htmlFor="Update-score">score </label>
         <input
           type="number"
+          id='Update-score'
           name="score"
           value={score}
           onChange={(e) => setScore(Number(e.target.value))}

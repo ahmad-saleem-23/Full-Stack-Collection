@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res) => {
   try {
     const { title, genre, score } = req.body
-    const newGames = await addGames(title, genre, score)
+    const [newGames] = await addGames(title, genre, score)
     res.json(newGames)
   } catch (error) {
     console.log(error)

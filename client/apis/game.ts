@@ -12,23 +12,29 @@ return request.get(url).then((response)=>{
 }
 
 export function getGameID (id:number){
-  return request.get(url+ `${id}`).then((response)=>{
+  return request.get(url+ `/${id}`).then((response)=>{
     console.log(response.body)
-   return response.body
+   return response.body 
   })
   }
 
 
 
 export function addAGame (game:newGame){
-  return request.post(url +'add').send(game)
-  }
+  return request.post(url +'/add').send(game).then((response) => {
+    return response.body as game;
+  })
+  .catch((err) => {
+    throw err;
+  });
+}
+
 
 
   export function deleteAGame (id:number){
-    return request.del(url +'delete')
+    return request.del(url +'/delete')
     }
 
     export function updateAGame (id:number, game:updatedGame){
-      return request.patch(url +`${id}`).send(game)
+      return request.patch(url +`/${id}`).send(game)
     }

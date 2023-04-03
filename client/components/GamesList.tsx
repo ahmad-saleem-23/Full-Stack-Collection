@@ -59,12 +59,3 @@ export default function GamesList() {
     </div>
   )
 }
-
-{
-  /* <li key={game.id}>
-<h2>{game.title}</h2>
-<p>Genre: {game.genre}</p>
-<p>Score: {game.score}</p>
-<p><DeletGame id={game.id} /></p>
-</li> */
-}

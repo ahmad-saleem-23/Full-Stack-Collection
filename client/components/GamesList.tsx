@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { fetchGames } from '../actions/games'
 import AddGame from './AddGame'
+import DeletGame from './DeleteGame'
 
 export default function GamesList() {
   const games = useAppSelector((state) => state.gamesReducer)
@@ -23,7 +24,9 @@ export default function GamesList() {
               <h2>{game.title}</h2>
               <p>Genre: {game.genre}</p>
               <p>Score: {game.score}</p>
+              <p><DeletGame id={game.id} /></p>
             </li>
+          
           ))}
         </ul>
       </div>

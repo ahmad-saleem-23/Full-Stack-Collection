@@ -1,6 +1,6 @@
 import type { ThunkAction } from '../store'
 import type { game, Games, newGame } from '../../models/games'
-import { addAGame, getGames } from '../apis/game'
+import { addAGame, deleteAGame, getGames } from '../apis/game'
 
 export const REQUEST_GAMES = 'REQUEST_GAMES'
 export const RECEIVE_GAMES = 'RECEIVE_GAMES'
@@ -53,6 +53,23 @@ export function fetchAddGames(game:newGame) :ThunkAction{
   return async dispatch  => {
    
     return addAGame(game)
+      .then((game) => {
+        dispatch(receiveGames([game]))
+      })
+      .catch((err) => {
+        if (err instanceof Error) {
+          dispatch(failureGames(err.message))
+        } else {
+          dispatch(failureGames('An unknown error occurred'))
+        }
+      })
+  }
+}
+
+export function fetchDeleteGames(id:number) :ThunkAction{
+  return async dispatch  => {
+   
+    return deleteAGame(id)
       .then((game) => {
         dispatch(receiveGames([game]))
       })

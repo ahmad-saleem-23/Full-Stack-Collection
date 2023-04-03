@@ -32,9 +32,19 @@ export function addAGame (game:newGame){
 
 
   export function deleteAGame (id:number){
-    return request.del(url +'/delete')
+    return request.delete(url +`/${id}/delete`).then((response) => {
+      return response.body as game;
+    })
+    .catch((err) => {
+      throw err;
+    });
     }
 
     export function updateAGame (id:number, game:updatedGame){
-      return request.patch(url +`/${id}`).send(game)
+      return request.patch(url +`/${id}`).send(game).then((response) => {
+        return response.body as game;
+      })
+      .catch((err) => {
+        throw err;
+      });
     }

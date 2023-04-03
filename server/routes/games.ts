@@ -28,11 +28,13 @@ router.post('/add', async (req, res) => {
   }
 })
 
-router.post('/delete', async (req, res) => {
+router.delete('/:id/delete', async (req, res) => {
   try {
-    const { id } = req.body
+    // const { id } = req.body
+    const id= Number (req.params.id)
+
     await deleteGame(id)
-    res.json()
+    res.redirect('/')
   } catch (error) {
     console.log(error)
     res.status(500).json({
@@ -54,7 +56,7 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-router.post('/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     const { title, genre, score } = req.body

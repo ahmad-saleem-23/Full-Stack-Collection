@@ -18,7 +18,7 @@ export default function GamesList() {
   }
   function handleUpdateClick(id: number) {
     setGameToUpdate(id)
-    setIsUpdate(true);
+    setIsUpdate(true)
   }
 
   useEffect(() => {
@@ -30,10 +30,16 @@ export default function GamesList() {
       <div>
         <h1>My Game Library</h1>
         <ul>
-        {games.data.map((game) => (
+          {games.data.map((game) => (
             <li key={game.id}>
-              {isUpdate && game.id === gameToUpdate ? (
-                <UpdateGame id={game.id} name={game.title} cata={game.genre} rating={game.score} onSubmit={handleUpdateCancel} />
+              {game.id === gameToUpdate ? (
+                <UpdateGame
+                  id={game.id}
+                  name={game.title}
+                  cata={game.genre}
+                  rating={game.score}
+                  onSubmit={handleUpdateCancel}
+                />
               ) : (
                 <>
                   <h2>{game.title}</h2>

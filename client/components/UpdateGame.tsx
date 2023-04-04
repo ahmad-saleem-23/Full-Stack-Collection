@@ -10,7 +10,7 @@ interface Props {
   onSubmit: () => void
 }
 export default function UpdateGame({ id,name,cata,rating, onSubmit }: Props) {
-  const games = useAppSelector((state) => state.gamesReducer)
+  
   const dispatch = useAppDispatch()
 
   const [title, setTitle] = useState(name)

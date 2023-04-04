@@ -23,12 +23,12 @@ export default function GamesList() {
 
   useEffect(() => {
     dispatch(fetchGames())
-  }, [])
+  }, [dispatch])
 
   return (
     <div>
       <div>
-        <h1>My Game Library</h1>
+    
         <ul>
           {games.data.map((game) => (
             <li key={game.id}>

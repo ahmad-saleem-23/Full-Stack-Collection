@@ -31,6 +31,7 @@ export default function UpdateGame({ id,name,cata,rating, onSubmit }: Props) {
 
   return (
     <div>
+      _____________________________________________
       <form onSubmit={handelSubmit}>
         <label htmlFor="Update-title">title </label>
         <input
@@ -63,6 +64,7 @@ export default function UpdateGame({ id,name,cata,rating, onSubmit }: Props) {
 
         {/* <input type="submit" /> */}
       </form>
+      _____________________________________________
     </div>
   )
 }

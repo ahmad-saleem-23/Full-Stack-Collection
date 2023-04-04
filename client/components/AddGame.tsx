@@ -32,6 +32,8 @@ export default function AddGame() {
 
   return (
     <div>
+      ____________________________________________
+      <h1>Add a Game</h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="title">Title:</label>
         <input

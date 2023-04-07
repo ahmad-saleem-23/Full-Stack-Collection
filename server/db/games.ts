@@ -31,7 +31,6 @@ export function updateGames(
   return db('games').where('id', id).update({ title, genre, score })
 }
 
-export function getGameById(id: number,
-  db = connection){
-    return db('games').where('id', id).select()
-  }
+export function getGameById(id: number, db = connection) {
+  return db('games').where('id', id).select()
+}

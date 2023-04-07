@@ -1,4 +1,4 @@
-import GamesList from "./GamesList"
+import GamesList from './GamesList'
 
 function App() {
   return (
@@ -6,8 +6,9 @@ function App() {
       <header className="header">
         <h1>My Game Library</h1>
       </header>
-      <section className="main">{/* add your code here */}
-      <GamesList/>
+      <section className="main">
+        {/* add your code here */}
+        <GamesList />
       </section>
     </>
   )

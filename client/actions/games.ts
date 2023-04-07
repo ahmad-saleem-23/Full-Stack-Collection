@@ -24,7 +24,6 @@ export function receiveGames(games: Games): GameAction {
   }
 }
 
-
 export function failureGames(errorMessage: string): GameAction {
   return {
     type: FAILURE_GAMES,
@@ -32,8 +31,8 @@ export function failureGames(errorMessage: string): GameAction {
   }
 }
 
-export function fetchGames():ThunkAction {
-  return (dispatch)  => {
+export function fetchGames(): ThunkAction {
+  return (dispatch) => {
     dispatch(requestGames())
     return getGames()
       .then((res) => {
@@ -49,9 +48,8 @@ export function fetchGames():ThunkAction {
   }
 }
 
-export function fetchAddGames(game:newGame) :ThunkAction{
-  return async dispatch  => {
-   
+export function fetchAddGames(game: newGame): ThunkAction {
+  return async (dispatch) => {
     return addAGame(game)
       .then((game) => {
         dispatch(receiveGames([game]))
@@ -66,9 +64,8 @@ export function fetchAddGames(game:newGame) :ThunkAction{
   }
 }
 
-export function fetchDeleteGames(id:number) :ThunkAction{
-  return async dispatch  => {
-   
+export function fetchDeleteGames(id: number): ThunkAction {
+  return async (dispatch) => {
     return deleteAGame(id)
       .then((game) => {
         dispatch(receiveGames([game]))
@@ -83,11 +80,9 @@ export function fetchDeleteGames(id:number) :ThunkAction{
   }
 }
 
-
-export function fetchUpdateGame(id:number,game:updatedGame) :ThunkAction{
-  return async dispatch  => {
-   
-    return updateAGame(id,game)
+export function fetchUpdateGame(id: number, game: updatedGame): ThunkAction {
+  return async (dispatch) => {
+    return updateAGame(id, game)
       .then((game) => {
         dispatch(receiveGames([game]))
       })

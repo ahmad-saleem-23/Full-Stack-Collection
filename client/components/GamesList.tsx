@@ -28,7 +28,6 @@ export default function GamesList() {
   return (
     <div>
       <div>
-    
         <ul>
           {games.data.map((game) => (
             <li key={game.id}>

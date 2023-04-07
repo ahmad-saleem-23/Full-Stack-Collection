@@ -1,5 +1,11 @@
 import express from 'express'
-import { addGames, deleteGame, getAllGames, getGameById, updateGames } from '../db/games'
+import {
+  addGames,
+  deleteGame,
+  getAllGames,
+  getGameById,
+  updateGames,
+} from '../db/games'
 
 const router = express.Router()
 
@@ -31,7 +37,7 @@ router.post('/add', async (req, res) => {
 router.delete('/:id/delete', async (req, res) => {
   try {
     // const { id } = req.body
-    const id= Number (req.params.id)
+    const id = Number(req.params.id)
 
     await deleteGame(id)
     res.redirect('/')
@@ -45,8 +51,8 @@ router.delete('/:id/delete', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const  id  = Number(req.params.id)
-    const game= await getGameById(id)
+    const id = Number(req.params.id)
+    const game = await getGameById(id)
     res.json(game)
   } catch (error) {
     console.log(error)

@@ -1,6 +1,8 @@
 # Fullstack Collection App
 
-This repo is designed to provide space to code a fullstack app. It contains node modules and folders for databases, routes, api requests, react components, and redux actions and creators. Let's get going!
+I developed this app as part of a course project to showcase my skills in building a full stack app from scratch. The app allows users to browse their game library, edit game information, add new games, and delete existing ones. While the app is not yet deployed, I plan to continue refining it and adding user authentication features in the future. You can check out the app's GitHub repository via the link provided.
+
+The tech stack used includes TypeScript, React, Redux, SQLite, Express.js, Node.js
 
 ## Setup
 

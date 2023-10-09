@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { fetchGames } from '../actions/games'
-import AddGame from './AddGame'
+import { Tilt } from 'react-tilt'
 import DeletGame from './DeleteGame'
 import UpdateGame from './UpdateGame'
 
@@ -27,33 +27,43 @@ export default function GamesList() {
 
   return (
     <div>
-      <div className='games'>
-        
-          {games.data.map((game) => (
-            <div className='game-card' key={game.id}>
-              {game.id === gameToUpdate ? (
-                <UpdateGame
-                  id={game.id}
-                  name={game.title}
-                  cata={game.genre}
-                  rating={game.score}
-                  onSubmit={handleUpdateCancel}
-                />
-              ) : (
-                <>
-                  <h2>{game.title}</h2>
-                  <p>Genre: {game.genre}</p>
-                  <p>Score: {game.score}</p>
-                  <button onClick={() => handleUpdateClick(game.id)}>
-                    Update
-                  </button>
-                  <DeletGame id={game.id} />
-                </>
-              )}
-            </div>
-          ))}
-      
+      <div className="games">
+        {games.data.map((game) => (
+          <>
+            <Tilt
+              options={{
+                max: 45,
+                scale: 1,
+                speed: 450,
+              }}
+              // className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+            >
+              <div className="game-card" key={game.id}>
+                {game.id === gameToUpdate ? (
+                  <UpdateGame
+                    id={game.id}
+                    name={game.title}
+                    cata={game.genre}
+                    rating={game.score}
+                    onSubmit={handleUpdateCancel}
+                  />
+                ) : (
+                  <>
+                    <h2>{game.title}</h2>
+                    <p>Genre: {game.genre}</p>
+                    <p>Score: {game.score}</p>
+                    <button onClick={() => handleUpdateClick(game.id)}>
+                      Update
+                    </button>
+                    <DeletGame id={game.id} />
+                  </>
+                )}
+              </div>
+            </Tilt>
+          </>
+        ))}
       </div>
+
       {/* <AddGame /> */}
     </div>
   )

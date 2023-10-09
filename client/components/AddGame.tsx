@@ -4,12 +4,15 @@ import { useAppDispatch } from '../hooks/hooks'
 import { fetchGames, fetchAddGames } from '../actions/games'
 import { useNavigate } from 'react-router-dom'
 
-export default function AddGame( {handleAddGameClick}: {handleAddGameClick: () => void}) {
+export default function AddGame({
+  handleAddGameClick,
+}: {
+  handleAddGameClick: () => void
+}) {
   const [title, setTitle] = useState('')
   const [genre, setGenre] = useState('')
   const [score, setScore] = useState(0)
   const navigate = useNavigate()
-
   const dispatch = useAppDispatch()
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {

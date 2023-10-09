@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import AddGame from './AddGame'
 import Home from './Home'

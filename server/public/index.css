@@ -11,12 +11,10 @@
   );
   color: white;
   text-align: center;
-
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-
 }
 
 .main{
@@ -27,8 +25,6 @@
     rgb(255, 255, 255) 100%
   );
   margin-top: 70px;
- 
-
 }
 
 .games{
@@ -38,6 +34,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .game-card{
   width:360px;
   min-width: 360px; 
@@ -48,6 +45,7 @@
   background-color: white;
   box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
 }
+
 .add-game-button{
   color: white;
   position: fixed;
@@ -57,14 +55,11 @@
   background: rgb(0, 0, 0);
   width: 150px;
   border-radius: 5px;
-
-
 }
 
 .add-game-button:hover{
   color: rgb(0, 0, 0);
-background: white;
-
+  background: white;
 }
 
 .add-game-form{
@@ -79,7 +74,4 @@ background: white;
   transform: translate(-50%, -50%);
   border-style: groove;
   border-radius: 20px;
-
 }
-
-

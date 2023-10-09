@@ -36,7 +36,6 @@ export default function GamesList() {
                 scale: 1,
                 speed: 450,
               }}
-              // className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
             >
               <div className="game-card" key={game.id}>
                 {game.id === gameToUpdate ? (
@@ -63,8 +62,6 @@ export default function GamesList() {
           </>
         ))}
       </div>
-
-      {/* <AddGame /> */}
     </div>
   )
 }

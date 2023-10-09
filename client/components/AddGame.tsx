@@ -1,20 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
-import { useAppDispatch, useAppSelector } from '../hooks/hooks'
+import { useAppDispatch } from '../hooks/hooks'
 import { fetchGames, fetchAddGames } from '../actions/games'
+import { useNavigate } from 'react-router-dom'
 
-export default function AddGame() {
+export default function AddGame( {handleAddGameClick}: {handleAddGameClick: () => void}) {
   const [title, setTitle] = useState('')
   const [genre, setGenre] = useState('')
   const [score, setScore] = useState(0)
-  // const games = useAppSelector((state) => state.gamesReducer)
+  const navigate = useNavigate()
+
   const dispatch = useAppDispatch()
-
-  // useEffect(() => {
-  //   const newGame ={title,genre, score}
-  //   dispatch(fetchAddGames(newGame))
-
-  // }, [])
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -28,6 +24,8 @@ export default function AddGame() {
     setTitle('')
     setGenre('')
     setScore(0)
+    navigate('/')
+    handleAddGameClick()
   }
 
   return (
@@ -61,10 +59,7 @@ export default function AddGame() {
           value={score}
           onChange={(e) => setScore(Number(e.target.value))}
         />
-
         <button type="submit">Submit game</button>
-
-        {/* <input type="submit" /> */}
       </form>
     </div>
   )

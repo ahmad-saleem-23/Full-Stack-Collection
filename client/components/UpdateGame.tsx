@@ -36,7 +36,6 @@ export default function UpdateGame({
 
   return (
     <div>
-      _____________________________________________
       <form onSubmit={handelSubmit}>
         <label htmlFor="Update-title">title </label>
         <input
@@ -67,9 +66,8 @@ export default function UpdateGame({
 
         <button type="submit">Submit updates</button>
 
-        {/* <input type="submit" /> */}
+        
       </form>
-      _____________________________________________
     </div>
   )
 }

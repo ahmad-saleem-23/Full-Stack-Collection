@@ -27,10 +27,10 @@ export default function GamesList() {
 
   return (
     <div>
-      <div>
-        <ul>
+      <div className='games'>
+        
           {games.data.map((game) => (
-            <li key={game.id}>
+            <div className='game-card' key={game.id}>
               {game.id === gameToUpdate ? (
                 <UpdateGame
                   id={game.id}
@@ -50,11 +50,11 @@ export default function GamesList() {
                   <DeletGame id={game.id} />
                 </>
               )}
-            </li>
+            </div>
           ))}
-        </ul>
+      
       </div>
-      <AddGame />
+      {/* <AddGame /> */}
     </div>
   )
 }
